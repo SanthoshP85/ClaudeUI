@@ -192,6 +192,8 @@
   .av-blue   { background: #DBEAFE; color: #1D4ED8; }
   .ll-info { flex: 1; min-width: 0; }
   .ll-name { font-size: 13px; font-weight: 500; color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ll-name a { color: #1D4ED8; text-decoration: none; font-weight: 500; }
+  .ll-name a:hover { text-decoration: underline; color: #1e40af; }
   .ll-phone { font-size: 11px; color: #888; margin-top: 1px; }
   .ll-unlink {
     border: none; background: none; cursor: pointer;
@@ -476,7 +478,7 @@
         <div class="ll-item">
           <div class="av av-purple">PK</div>
           <div class="ll-info">
-            <div class="ll-name">Priya Kapoor</div>
+            <div class="ll-name"><a href="#lead/priya-kapoor">Priya Kapoor</a></div>
             <div class="ll-phone">+91 98100 44201</div>
           </div>
           <button class="ll-unlink" title="Unlink" onclick="unlinkLead(this)"><span class="icon-unlink"></span></button>
@@ -661,7 +663,7 @@
     el.innerHTML = `
       <div class="av ${lead.color}">${lead.initials}</div>
       <div class="ll-info">
-        <div class="ll-name">${lead.name}</div>
+        <div class="ll-name"><a href="#lead/${lead.name.toLowerCase().replace(/\s+/g,'-')}">${lead.name}</a></div>
         <div class="ll-phone">${lead.phone}</div>
       </div>
       <button class="ll-unlink" title="Unlink" onclick="unlinkLead(this)"><span class="icon-unlink"></span></button>`;
